@@ -27,7 +27,7 @@
     </header>
 
     <!--Booking Section-->
-    <main class="main-content container">
+    <main id="transform" class="main-content container">
         <div class="booking-form">
             <h3>Booking Flights</h3>
             <div class="input-group">
@@ -62,7 +62,7 @@
             </div>
 
 
-            <div class="input-group f-class">
+            <div class="input-group f-class col-sm">
                 <div>
                     <label for="">Economy ($100)</label>
 
@@ -103,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="book-now" class="btn-style">Book Now</button>
         </div>
 
         <div class="booking-content">
@@ -127,7 +127,7 @@
             if (isIncrease == false && ticketCount > 0) {
                 ticketNewCount = ticketCount - 1;
             }
-            document.getElementById(ticket + '-count').value =ticketNewCount;
+            document.getElementById(ticket + '-count').value = ticketNewCount;
             let ticketTotal = 0;
             if (ticket == 'first') {
                 ticketTotal = ticketNewCount * 150;
@@ -138,7 +138,7 @@
 
             calculateTotal();
         }
-        
+
         //ticket price calculation area.
         function calculateTotal() {
             const firstClassCount = getInputValue('first');
@@ -160,8 +160,11 @@
             const ticketCount = parseInt(ticketInput.value);
             return ticketCount;
         }
-    </script>
+        document.getElementById('book-now').addEventListener('click', function () {
 
+            confirm(" Congratulations! Your seats has been reserved. Have a safe journey. Thank you.");
+        })
+    </script>
 </body>
 
 </html>
